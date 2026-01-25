@@ -1010,211 +1010,221 @@ main {
 
 
 
-/*-----------------------------------*\
-  #PORTFOLIO
-\*-----------------------------------*/
-
-.filter-list { display: none; }
-
-.filter-select-box {
-  position: relative;
-  margin-bottom: 25px;
-}
-
-.filter-select {
-  background: var(--eerie-black-2);
-  color: var(--light-gray);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 12px 16px;
-  border: 1px solid var(--jet);
-  border-radius: 14px;
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-}
-
-.filter-select.active .select-icon { transform: rotate(0.5turn); }
-
-.select-list {
-  background: var(--eerie-black-2);
-  position: absolute;
-  top: calc(100% + 6px);
-  width: 100%;
-  padding: 6px;
-  border: 1px solid var(--jet);
-  border-radius: 14px;
-  z-index: 2;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: 0.15s ease-in-out;
-}
-
-.filter-select.active + .select-list {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
-}
-
-.select-item button {
-  background: var(--eerie-black-2);
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  text-transform: capitalize;
-  width: 100%;
-  padding: 8px 10px;
-  border-radius: 8px;
-}
-
-.select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+/* ==============================
+   PORTFOLIO GRID
+================================ */
 
 .project-list {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  margin-bottom: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 25px;
 }
 
-.project-item { display: none; }
+/* ==============================
+   PROJECT CARD
+================================ */
+
+.project-item {
+  display: none;
+}
 
 .project-item.active {
   display: block;
-  animation: scaleUp 0.25s ease forwards;
+  animation: fadeUp 0.4s ease forwards;
 }
 
-@keyframes scaleUp {
-  0% { transform: scale(0.5); }
-  100% { transform: scale(1); }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.project-item > a { width: 100%; }
+.project-item > a,
+.project-item {
+  background: linear-gradient(
+    180deg,
+    hsl(240, 3%, 14%),
+    hsl(240, 3%, 11%)
+  );
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
+}
+
+/* ==============================
+   PROJECT IMAGE
+================================ */
 
 .project-img {
   position: relative;
-  width: 100%;
-  height: 200px;
-  border-radius: 16px;
+  height: 180px;
+  border-radius: 14px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 }
-
-.project-img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 1;
-  transition: var(--transition-1);
-}
-
-.project-item > a:hover .project-img::before { background: hsla(0, 0%, 0%, 0.5); }
-
-.project-item-icon-box {
-  --scale: 0.8;
-
-  background: var(--jet);
-  color: var(--orange-yellow-crayola);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(var(--scale));
-  font-size: 20px;
-  padding: 18px;
-  border-radius: 12px;
-  opacity: 0;
-  z-index: 1;
-  transition: var(--transition-1);
-}
-
-.project-item > a:hover .project-item-icon-box {
-  --scale: 1;
-  opacity: 1;
-}
-
-.project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
 
 .project-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition-1);
+  transition: transform 0.4s ease;
 }
 
-.project-item > a:hover img { transform: scale(1.1); }
-
-.project-title,
-.project-category { margin-left: 10px; }
-
-.project-title {
-  color: var(--white-2);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-400);
-  text-transform: capitalize;
-  line-height: 1.3;
+.project-item:hover .project-img img {
+  transform: scale(1.08);
 }
 
-.project-category {
-  color: var(--light-gray-70);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-}
-
-.code1 {
-  background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: var(--fs-6);
-  font-weight: var(--fw-500);
-  cursor: pointer;
-  position: relative;
-  transition: var(--transition-1);
-  box-shadow: var(--shadow-3);
-  text-transform: capitalize;
-}
-
-.code1 {
-  font-size: 12px; /* make it smaller */
-  padding: 8px 18px; /* optional: adjust size nicely */
-}
-
-.code1::before {
-  content: "";
+/* Overlay icon */
+.project-item-icon-box {
   position: absolute;
-  inset: 1px;
-  background: var(--bg-gradient-jet);
-  border-radius: inherit;
-  z-index: -1;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.code1:hover {
-  color: black;
-  background: var(--orange-yellow-crayola);
-  transform: translateY(-3px);
+.project-item:hover .project-item-icon-box {
+  opacity: 1;
 }
 
-.code1:active {
-  transform: scale(0.95);
+.project-item-icon-box ion-icon {
+  font-size: 26px;
+  color: var(--orange-yellow-crayola);
 }
+
+/* ==============================
+   PROJECT CONTENT
+================================ */
 
 .project-info {
-  margin-top: 10px;
-  padding: 0 10px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.project-info a {
+/* Title */
+.project-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white-2);
+  margin-top: 4px;
+}
+
+/* Description (smaller & smooth) */
+.project-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--light-gray-70);
+}
+
+/* Tech stack */
+.project-tech {
+  font-size: 11px;
+  color: var(--orange-yellow-crayola);
+  opacity: 0.9;
+}
+
+/* ==============================
+   VIEW CODE BUTTON
+================================ */
+
+.code-btn {
+  margin-top: 10px;
+  align-self: flex-start;
+  padding: 8px 18px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    var(--orange-yellow-crayola),
+    hsl(38, 100%, 60%)
+  );
+  color: black;
   text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.code-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 200, 60, 0.45);
+}
+
+/* ==============================
+   FILTER BAR POLISH
+================================ */
+
+/* ==============================
+   FILTER BAR POLISH (FIXED)
+================================ */
+
+/* ==============================
+   FILTER BAR – FORCE FIX
+================================ */
+
+.filter-list {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+/* Default button */
+.filter-item button {
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--light-gray);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Hover (non-active only) */
+.filter-item button:hover:not(.active) {
+  background: hsla(45, 100%, 70%, 0.15);
+  color: var(--orange-yellow-crayola);
+}
+
+/* 🔥 ACTIVE STATE – HARD OVERRIDE */
+.filter-item button.active {
+  background: var(--orange-yellow-crayola) !important;
+  color: #111 !important;          /* 🔥 FORCE dark text */
+  font-weight: 600;
+}
+
+.filter-item button.active {
+  box-shadow: 0 6px 16px rgba(255, 200, 60, 0.35);
+}
+
+
+/* ==============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .project-img {
+    height: 160px;
+  }
+
+  .project-title {
+    font-size: 14px;
+  }
+}
 
 
 /*-----------------------------------*\

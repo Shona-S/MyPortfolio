@@ -4,72 +4,199 @@
   </header>
 
   <section class="projects">
-    <!-- Filter Buttons -->
+
+    <!-- FILTER BAR -->
     <ul class="filter-list">
-      <li class="filter-item"><button class="active" data-filter="all">All</button></li>
-      <li class="filter-item"><button data-filter="web design">Web Design</button></li>
-      <li class="filter-item"><button data-filter="applications">Applications</button></li>
-      <li class="filter-item"><button data-filter="web development">Web Development</button></li>
+      <li class="filter-item">
+        <button class="active" data-filter="all">All</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter="java">Java</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter="web">Web Development</button>
+      </li>
+      <li class="filter-item">
+        <button data-filter="aiml">AI / ML</button>
+      </li>
     </ul>
 
-    <!-- Project Grid -->
+    <!-- PROJECT GRID -->
     <ul class="project-list">
-      <li class="project-item" data-category="web development">
-        <a href="https://jade-moonbeam-a62c65.netlify.app/">
-          <figure class="project-img">
-            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-            <img src="./assets/projects/profitt.png" alt="Finance" loading="lazy">
-          </figure>
-          <div class="project-info">
-          <div>
-            <h3 class="project-title">Gym And Fitness</h3>
-            <p class="project-category">Web Development</p>
+
+      <!-- Gym & Fitness -->
+      <li class="project-item active" data-category="web">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
           </div>
+          <img src="./assets/projects/profitt.png" alt="Gym & Fitness" loading="lazy">
+        </figure>
 
-          <a href="https://github.com/Shona-S/ProFit.git">
-            <button class="code1">View code</button>
-          </a>
+        <div class="project-info">
+          <h3 class="project-title">Gym And Fitness</h3>
+          <p class="project-desc">
+            Responsive gym and fitness website with modern UI and workout sections.
+          </p>
+          <p class="project-tech">HTML • CSS • JavaScript</p>
+          <a href="https://github.com/Shona-S/ProFit.git" class="code-btn">View Code</a>
         </div>
-
-        </a>
       </li>
 
-      <li class="project-item" data-category="web development">
-        <a href="https://docunestt.netlify.app/login">
-          <figure class="project-img">
-            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-            <img src="./assets/projects/IntervYou.png" alt="Finance" loading="lazy">
-          </figure>
-          <div class="project-info">
-          <div>
-            <h3 class="project-title">IntervYou</h3>
-            <p class="project-category">Interview Prepp app</p>
+      <!-- IntervYou -->
+      <li class="project-item active" data-category="web">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
           </div>
+          <img src="./assets/projects/IntervYou.png" alt="IntervYou" loading="lazy">
+        </figure>
 
-          <a href="https://github.com/Shona-S/IntervYou">
-            <button class="code1">View code</button>
-          </a>
+        <div class="project-info">
+          <h3 class="project-title">IntervYou</h3>
+          <p class="project-desc">
+            Interview and placement preparation platform covering Aptitude, Coding, GD and HR.
+          </p>
+          <p class="project-tech">React • Node.js • MongoDB</p>
+          <a href="https://github.com/Shona-S/IntervYou" class="code-btn">View Code</a>
         </div>
-
-      <li class="project-item" data-category="web development">
-        <a href="https://docunestt.netlify.app/login">
-          <figure class="project-img">
-            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-            <img src="./assets/projects/docunest.png" alt="Finance" loading="lazy">
-          </figure>
-          <div class="project-info">
-          <div>
-            <h3 class="project-title">DocuNest</h3>
-            <p class="project-category">Doc Secure Vault</p>
-          </div>
-
-          <a href="https://github.com/Shona-S/DocuNest">
-            <button class="code1">View code</button>
-          </a>
-        </div>
-
-        </a>
       </li>
+
+      <!-- DocuNest -->
+      <li class="project-item active" data-category="web">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+          <img src="./assets/projects/docunest.png" alt="DocuNest" loading="lazy">
+        </figure>
+
+        <div class="project-info">
+          <h3 class="project-title">DocuNest</h3>
+          <p class="project-desc">
+            Secure document vault for storing and managing confidential files.
+          </p>
+          <p class="project-tech">React • Firebase • Authentication</p>
+          <a href="https://github.com/Shona-S/DocuNest" class="code-btn">View Code</a>
+        </div>
+      </li>
+
+      <!-- Quiz Management -->
+      <li class="project-item active" data-category="web">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+          <img src="./assets/projects/quiz.png" alt="Quiz Management System" loading="lazy">
+        </figure>
+
+        <div class="project-info">
+          <h3 class="project-title">Quiz Management System</h3>
+          <p class="project-desc">
+            Application to create, manage quizzes and track user performance.
+          </p>
+          <p class="project-tech">React • Springboot • MySQL</p>
+          <a href="https://github.com/Shona-S/Quiz-Management" class="code-btn">View Code</a>
+        </div>
+      </li>
+
+      <!-- Project Management -->
+      <li class="project-item active" data-category="web">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+          <img src="./assets/projects/pro.png" alt="Progresso" loading="lazy">
+        </figure>
+
+        <div class="project-info">
+          <h3 class="project-title">Progresso</h3>
+          <p class="project-desc">
+            Project management system to track progress, add tasks and notes.
+          </p>
+          <p class="project-tech">React • Node.js • MongoDB</p>
+          <a href="https://github.com/Shona-S/Progresso" class="code-btn">View Code</a>
+        </div>
+      </li>
+
+      <!-- Bank Management -->
+      <li class="project-item active" data-category="java">
+        <figure class="project-img">
+          <div class="project-item-icon-box">
+            <ion-icon name="eye-outline"></ion-icon>
+          </div>
+          <img src="./assets/projects/bank.png" alt="Bank Management System" loading="lazy">
+        </figure>
+
+        <div class="project-info">
+          <h3 class="project-title">Bank Management System</h3>
+          <p class="project-desc">
+            Java Swing based ATM system with balance check, deposit and withdrawal.
+          </p>
+          <p class="project-tech">Java • Swing • MySQL • JDBC</p>
+          <a href="https://github.com/Shona-S/BankManagementSystem" class="code-btn">View Code</a>
+        </div>
+      </li>
+
+
+
+        <li class="project-item active" data-category="aiml">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
+        </div>
+        <img src="./assets/projects/resume.png" alt="Resume Screening System" loading="lazy">
+      </figure>
+
+      <div class="project-info">
+        <h3 class="project-title">Resume Screening System</h3>
+        <p class="project-desc">
+          NLP-based system that matches resumes with job descriptions using similarity analysis.
+        </p>
+        <p class="project-tech">Python • NLP • TF-IDF • Cosine Similarity</p>
+        <a href="https://github.com/Shona-S/Resume-Screening-System" class="code-btn">View Code</a>
+      </div>
+    </li>
+
+
+          <li class="project-item active" data-category="aiml">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
+        </div>
+        <img src="./assets/projects/news.png" alt="Fake News Detection System" loading="lazy">
+      </figure>
+
+      <div class="project-info">
+        <h3 class="project-title">Fake News Detection System</h3>
+        <p class="project-desc">
+          NLP-based machine learning model to classify news articles as fake or real.
+        </p>
+        <p class="project-tech">Python • NLP • Scikit-learn • Pandas</p>
+        <a href="https://github.com/Shona-S/Fake-News-Detection" class="code-btn">View Code</a>
+      </div>
+    </li>
+
+
+          <li class="project-item active" data-category="aiml">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
+        </div>
+        <img src="./assets/projects/projectrec.png" alt="AI Project Recommendation Engine" loading="lazy">
+      </figure>
+
+      <div class="project-info">
+        <h3 class="project-title">AI Project Recommendation Engine</h3>
+        <p class="project-desc">
+          Machine learning system that recommends projects based on user skills and domain.
+        </p>
+        <p class="project-tech">Python • Machine Learning • Recommendation System</p>
+        <a href="https://github.com/Shona-S/AI-Project-Recommendation" class="code-btn">View Code</a>
+      </div>
+    </li>
+
+
     </ul>
   </section>
 </section>
