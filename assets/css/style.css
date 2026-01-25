@@ -487,64 +487,9 @@ main {
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
-
-.cert-filter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 20px 0;
-}
-
-.cert-btn {
-  padding: 8px 18px;
-  background: transparent;
-  border: 1px solid var(--jet);
-  border-radius: 14px;
-  color: var(--white-1);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.cert-btn.active {
-  background: var(--orange-yellow-crayola);
-  color: black;
-}
-
-.cert-tab { display: none; }
-.cert-tab.active { display: block; }
-
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
-
-.cert-card {
-  background: var(--eerie-black-2);
-  padding: 12px;
-  border-radius: 16px;
-  border: 1px solid var(--jet);
-  transition: 0.3s;
-}
-
-.cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-3);
-}
-
-.cert-card img {
-  width: 100%;
-  height: 220px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.cert-title {
-  margin-top: 10px;
-  color: var(--white-1);
-  font-size: var(--fs-6);
-}
-
+/* =========================
+   CERTIFICATE FILTER BAR
+========================= */
 
 .cert-filter {
   display: flex;
@@ -560,13 +505,18 @@ main {
   border-radius: 14px;
   color: var(--white-1);
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .cert-btn.active {
   background: var(--orange-yellow-crayola);
-  color: black;
+  color: #111;
+  font-weight: 600;
 }
+
+/* =========================
+   CERTIFICATE TABS
+========================= */
 
 .cert-tab {
   display: none;
@@ -576,42 +526,80 @@ main {
   display: block;
 }
 
+/* =========================
+   CERTIFICATE GRID
+   🔥 3 per row
+========================= */
+
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(3, 1fr); /* ✅ 3 in a row */
+  gap: 28px;
 }
+
+/* =========================
+   CERTIFICATE CARD
+========================= */
 
 .cert-card {
   background: var(--eerie-black-2);
   padding: 14px;
-  border-radius: 16px;
+  border-radius: 18px;
   border: 1px solid var(--jet);
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cert-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-3);
 }
 
+/* =========================
+   CERTIFICATE IMAGE
+========================= */
+
 .cert-card img {
   width: 100%;
-  height: 220px;
-  border-radius: 12px;
+  height: 180px;
+  border-radius: 14px;
   object-fit: cover;
 }
+
+/* =========================
+   CERTIFICATE TEXT
+========================= */
 
 .cert-title {
   margin-top: 12px;
   font-size: var(--fs-6);
+  font-weight: 500;
   color: var(--white-1);
+  line-height: 1.4;
 }
 
 .cert-source {
-  margin-top: 3px;
-  color: var(--white-2);
+  margin-top: 4px;
   font-size: var(--fs-7);
+  color: var(--white-2);
+  opacity: 0.85;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* Tablets → 2 per row */
+@media (max-width: 900px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile → 1 per row */
+@media (max-width: 550px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*-----------------------------------*\
